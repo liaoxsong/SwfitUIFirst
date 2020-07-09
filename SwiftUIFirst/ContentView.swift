@@ -10,12 +10,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-    }
+        ZStack {
+            SignUpVideoView()
+            PageView(SignUpSectionView.dummy.map {
+                SignUpSectionView(content: $0)
+            })
+        }
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		SignUpVideoView()
     }
 }

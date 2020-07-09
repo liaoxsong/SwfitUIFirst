@@ -14,6 +14,10 @@
 		E4221007249201FE0010889F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4221006249201FE0010889F /* Preview Assets.xcassets */; };
 		E422100A249201FE0010889F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4221008249201FE0010889F /* LaunchScreen.storyboard */; };
 		E4221015249201FE0010889F /* SwiftUIFirstTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4221014249201FE0010889F /* SwiftUIFirstTests.swift */; };
+		E4FF05C224B70CC60076A45A /* SignUpVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF05C124B70CC60076A45A /* SignUpVideoView.swift */; };
+		E4FF05C424B70D610076A45A /* drone.mov in Resources */ = {isa = PBXBuildFile; fileRef = E4FF05C324B70D610076A45A /* drone.mov */; };
+		E4FF05C624B75AF10076A45A /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF05C524B75AF10076A45A /* PageControl.swift */; };
+		E4FF05C824B75B6B0076A45A /* SignUpSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF05C724B75B6B0076A45A /* SignUpSectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		E4221010249201FE0010889F /* SwiftUIFirstTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIFirstTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4221014249201FE0010889F /* SwiftUIFirstTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFirstTests.swift; sourceTree = "<group>"; };
 		E4221016249201FE0010889F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4FF05C124B70CC60076A45A /* SignUpVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVideoView.swift; sourceTree = "<group>"; };
+		E4FF05C324B70D610076A45A /* drone.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = drone.mov; sourceTree = "<group>"; };
+		E4FF05C524B75AF10076A45A /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		E4FF05C724B75B6B0076A45A /* SignUpSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 		E4220FFC249201F70010889F /* SwiftUIFirst */ = {
 			isa = PBXGroup;
 			children = (
+				E4FF05C324B70D610076A45A /* drone.mov */,
 				E4220FFD249201F70010889F /* AppDelegate.swift */,
 				E4220FFF249201F70010889F /* SceneDelegate.swift */,
 				E4221001249201F70010889F /* ContentView.swift */,
@@ -86,6 +95,9 @@
 				E4221008249201FE0010889F /* LaunchScreen.storyboard */,
 				E422100B249201FE0010889F /* Info.plist */,
 				E4221005249201FE0010889F /* Preview Content */,
+				E4FF05C124B70CC60076A45A /* SignUpVideoView.swift */,
+				E4FF05C524B75AF10076A45A /* PageControl.swift */,
+				E4FF05C724B75B6B0076A45A /* SignUpSectionView.swift */,
 			);
 			path = SwiftUIFirst;
 			sourceTree = "<group>";
@@ -189,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E422100A249201FE0010889F /* LaunchScreen.storyboard in Resources */,
+				E4FF05C424B70D610076A45A /* drone.mov in Resources */,
 				E4221007249201FE0010889F /* Preview Assets.xcassets in Resources */,
 				E4221004249201FE0010889F /* Assets.xcassets in Resources */,
 			);
@@ -208,6 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4FF05C624B75AF10076A45A /* PageControl.swift in Sources */,
+				E4FF05C224B70CC60076A45A /* SignUpVideoView.swift in Sources */,
+				E4FF05C824B75B6B0076A45A /* SignUpSectionView.swift in Sources */,
 				E4220FFE249201F70010889F /* AppDelegate.swift in Sources */,
 				E4221000249201F70010889F /* SceneDelegate.swift in Sources */,
 				E4221002249201F70010889F /* ContentView.swift in Sources */,
