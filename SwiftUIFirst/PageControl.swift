@@ -50,8 +50,12 @@ struct PageControl: UIViewRepresentable {
 
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
-    @State var currentPage = 0
-    init(_ views: [Page]) {
+    @Binding var currentPage: Int
+//    @State var currentPage: Int = 0
+
+
+    init(currentPage: Binding<Int>, _ views: [Page]) {
+        self._currentPage = currentPage
         self.viewControllers = views.map {
             let u = UIHostingController(rootView: $0)
             u.view.backgroundColor = .clear
@@ -89,9 +93,16 @@ struct PageViewController: UIViewControllerRepresentable {
         return pageViewController
     }
 
+    @State var lastPage: Int = 0
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
+        let animated = lastPage != currentPage
+        let direction: UIPageViewController.NavigationDirection = currentPage > lastPage ? .forward : .reverse
         pageViewController.setViewControllers(
-            [controllers[currentPage]], direction: .forward, animated: true)
+        [controllers[currentPage]], direction: direction, animated: animated) { _ in
+            DispatchQueue.main.async {
+                self.lastPage = self.currentPage
+            }
+        }
 
     }
 
