@@ -42,28 +42,39 @@ class SignUpUserObject: ObservableObject {
 
 struct SignUpWhatsYourEmail: View {
     @EnvironmentObject var flowState: SignUpLoginFlowState
-    @State private var email: String = ""
+    @State var email: String = "original_for_editing"
+    @State var committedEmail: String = "original_committed"
 
     @State var showPassword = false
 
     @State var uuid = UUID()
-    
+
     var body: some View {
         VStack(spacing: 55.0) {
             Text("What's your email?")
                 .font(.largeTitle)
-            TextField("Email", text: self.$email)
+            TextField("Email", text: self.$email, onEditingChanged: { (bool) in
+                print("onEditingChanged -- \(bool) -- email is \(self.email)")
+            }) {
+                print("onCommit -- email is \(self.email)")
+                self.committedEmail = self.email
+            }
+//            TextField("Email", text: self.$email)
                 .keyboardType(.emailAddress)
                 .textContentType(.emailAddress)
                 .background(Color.black.opacity(0.30))
 
             Button("Next Page") {
                 self.flowState.truncateHere()
-                self.flowState.content.append(AnyView(SignUpCreateAPassword(email: self.$email)))
+                self.flowState.content.append(AnyView(SignUpCreateAPassword(email: self.$committedEmail)))
                 self.flowState.forward()
             }
         }.padding()
-        .debug("Email is \(self.email)")
+            .onAppear(perform: {
+                print("Appearing... email is \(self.email)    \(self.committedEmail)")
+                self.email = self.committedEmail
+            })
+        .debug("Email is \(self.email).. \(self._email.wrappedValue)")
         .debug("Email uuid \(self.uuid.uuidString)")
     }
 }
