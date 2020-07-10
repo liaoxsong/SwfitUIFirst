@@ -46,6 +46,8 @@ struct SignUpWhatsYourEmail: View {
 
     @State var showPassword = false
 
+    @State var uuid = UUID()
+    
     var body: some View {
         VStack(spacing: 55.0) {
             Text("What's your email?")
@@ -61,6 +63,8 @@ struct SignUpWhatsYourEmail: View {
                 self.flowState.forward()
             }
         }.padding()
+        .debug("Email is \(self.email)")
+        .debug("Email uuid \(self.uuid.uuidString)")
     }
 }
 
@@ -125,6 +129,7 @@ struct SignUpCreateAPassword: View {
                 self.flowState.forward()
             }
         }.padding()
+        .debug("Pssword is \(self.password)")
     }
 }
 

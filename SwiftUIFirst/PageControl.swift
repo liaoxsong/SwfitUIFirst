@@ -9,6 +9,22 @@
 import Foundation
 import SwiftUI
 
+struct PrintView<Content: View>: View {
+    var text: String
+    var content: Content
+
+    var body: some View {
+        print(text)
+        return content
+    }
+}
+
+extension View {
+    func debug(_ text: String) -> some View {
+        PrintView(text: text, content: self)
+    }
+}
+
 //https://stackoverflow.com/questions/58388071/how-to-implement-pageview-in-swiftui
 struct PageControl: UIViewRepresentable {
     var numberOfPages: Int
@@ -65,8 +81,8 @@ struct PageView<Page: View>: View {
 
     var body: some View {
         ZStack(alignment: .bottom) {
-
             PageViewController(controllers: viewControllers, currentPage: $currentPage)
+                .debug("current page is \(currentPage)")
             PageControl(numberOfPages: viewControllers.count, currentPage: $currentPage)
         }
     }
